@@ -1,0 +1,18 @@
+# Ignorowanie plików IDE
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Ignorowanie plików lokalnej bazy danych H2
+data/booksdb.*.db
+*.mv.db
+*.trace.db
+demo/data/
+
+# Ignorowanie ukrytych plików systemowych (np. na macOS lub Windows)
+.DS_Store
+Thumbs.db
+
+# Folder builda dla modułu demo (choć demo ma też swój .gitignore)
+demo/target/
