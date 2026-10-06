@@ -5,7 +5,6 @@ echo Uruchamianie bazy danych w Dockerze
 docker compose up -d
 
 echo Kompilacja aplikacji
-cd demo
 call mvnw.cmd clean package -DskipTests
 
 echo Start Bookstore API
