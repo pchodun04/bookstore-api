@@ -1,13 +1,13 @@
-package pjatk.tpo.demo.service;
+package bookstore.service;
 
 import org.springframework.stereotype.Service;
-import pjatk.tpo.demo.ApiException;
-import pjatk.tpo.demo.model.Book;
-import pjatk.tpo.demo.model.CartItem;
-import pjatk.tpo.demo.model.User;
-import pjatk.tpo.demo.repository.BookRepository;
-import pjatk.tpo.demo.repository.CartItemRepository;
-import pjatk.tpo.demo.repository.UserRepository;
+import bookstore.ApiException;
+import bookstore.model.Book;
+import bookstore.model.CartItem;
+import bookstore.model.User;
+import bookstore.repository.BookRepository;
+import bookstore.repository.CartItemRepository;
+import bookstore.repository.UserRepository;
 
 import java.util.List;
 import java.util.Optional;

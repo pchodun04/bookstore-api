@@ -1,4 +1,4 @@
-package pjatk.tpo.demo;
+package bookstore;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

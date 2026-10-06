@@ -8,11 +8,11 @@
         <version>3.5.0</version>
         <relativePath/>
     </parent>
-    <groupId>pjatk.tpo</groupId>
-    <artifactId>demo</artifactId>
+    <groupId>bookstore</groupId>
+    <artifactId>bookstore-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>demo</name>
-    <description>demo</description>
+    <name>bookstore-api</name>
+    <description>Bookstore REST API</description>
     <url/>
     <licenses>
         <license/>
@@ -50,10 +50,6 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
@@ -61,6 +57,11 @@
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
             <version>2.8.5</version>
+        </dependency>
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>12.8.1.jre11</version>
         </dependency>
     </dependencies>
 

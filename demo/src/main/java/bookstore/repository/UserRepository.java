@@ -1,7 +1,7 @@
-package pjatk.tpo.demo.repository;
+package bookstore.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import pjatk.tpo.demo.model.User;
+import bookstore.model.User;
 
 import java.util.Optional;
 

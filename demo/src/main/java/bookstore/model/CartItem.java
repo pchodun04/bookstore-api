@@ -1,4 +1,4 @@
-package pjatk.tpo.demo.model;
+package bookstore.model;
 
 import jakarta.persistence.*;
 import lombok.*;

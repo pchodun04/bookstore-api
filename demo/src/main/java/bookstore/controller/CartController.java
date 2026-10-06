@@ -1,8 +1,9 @@
-package pjatk.tpo.demo.controller;
+package bookstore.controller;
 
 import org.springframework.web.bind.annotation.*;
-import pjatk.tpo.demo.model.CartItem;
-import pjatk.tpo.demo.service.CartService;
+import bookstore.dto.dto;
+import bookstore.model.CartItem;
+import bookstore.service.CartService;
 
 import java.util.List;
 
@@ -18,8 +19,8 @@ public class CartController {
     }
 
     @GetMapping("/{userId}")
-    public List<CartItem> getCartItem(@PathVariable Integer userId) {
-        return cartService.getCartItems(userId);
+    public List<dto.CartItemResponse> getCartItem(@PathVariable Integer userId) {
+        return cartService.getCartItems(userId).stream().map(dto.CartItemResponse::from).toList();
     }
 
     @GetMapping("/{userId}/{bookId}")

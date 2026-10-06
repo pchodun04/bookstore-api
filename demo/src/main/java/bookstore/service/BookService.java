@@ -1,9 +1,10 @@
-package pjatk.tpo.demo.service;
+package bookstore.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import pjatk.tpo.demo.model.Book;
-import pjatk.tpo.demo.repository.BookRepository;
+import bookstore.ApiException;
+import bookstore.model.Book;
+import bookstore.repository.BookRepository;
 
 import java.util.Comparator;
 import java.util.List;
@@ -18,19 +19,24 @@ public class BookService {
     }
 
     public Book saveBook(Book book) {
+        if(bookRepository.existsByTitleAndAuthor(book.getTitle(), book.getAuthor())) {
+            throw ApiException.invalidData("Taka ksiazka juz istnieje");
+        }
         return bookRepository.save(book);
     }
 
     public List<Book> getBooks(String sortBy) {
-        List<Book> books = bookRepository.findAll();
+        Sort sort = switch (sortBy){
+            case "author" -> Sort.by("author");
+            case "price" -> Sort.by("price");
+            default -> Sort.by("title");
+        };
 
-        switch (sortBy) {
-            case "title" -> books.sort(Comparator.comparing(Book::getTitle));
-            case "author" -> books.sort(Comparator.comparing(Book::getAuthor));
-            case "price" -> books.sort(Comparator.comparingDouble(Book::getPrice));
-        }
+        return bookRepository.findAll(sort);
+    }
 
-        return books;
+    public Book getBook(String title) {
+        return bookRepository.findByTitle(title).orElseThrow(() -> ApiException.notFound("Taka ksiazka nie istnieje"));
     }
 
     public Book updateBook(Integer id, String title, String author, int pages, double price) {

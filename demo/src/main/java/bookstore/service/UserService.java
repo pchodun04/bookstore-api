@@ -1,13 +1,13 @@
-package pjatk.tpo.demo.service;
+package bookstore.service;
 
 import org.springframework.stereotype.Service;
-import pjatk.tpo.demo.model.User;
-import pjatk.tpo.demo.repository.UserRepository;
-import pjatk.tpo.demo.ApiException;
+import bookstore.model.User;
+import bookstore.repository.UserRepository;
+import bookstore.ApiException;
 
 import java.util.List;
 
-import static pjatk.tpo.demo.ApiException.notFound;
+import static bookstore.ApiException.notFound;
 
 @Service
 public class UserService {
